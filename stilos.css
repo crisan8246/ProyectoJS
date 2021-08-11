@@ -1,0 +1,43 @@
+/*grid*/
+body{
+    display: grid;
+    grid-template-areas: 
+    "cabeza cabeza"/*1 fila*/
+    "cont cont"/*2 fila*/
+    "pie pie"/*3 fila*/
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 525px 50px;
+    
+    
+}    
+
+ /*nombro cada item*/   
+header{
+    grid-area: cabeza;
+    background-color:rgb(4, 99, 4);
+    display: flex;
+    justify-content: center;
+       
+        
+}
+
+main{
+    grid-area: cont;
+    display: grid;
+    grid-gap: 20px ;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 100%);
+       
+    
+}
+
+
+
+footer{
+    grid-area: pie;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(4, 99, 4);
+    
+}
