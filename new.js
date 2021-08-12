@@ -38,10 +38,92 @@ const press1 = $("#Pres1");
 // const input1 = document.querySelector(".ResSuma");
 // const ho = document.querySelector(".Ho");
 
+// ANIMACIONES
+
+// const efec = () => {
+//     $("#ResSuma").fadeIn();
+// };
+// $(".pres3").click(efec);
+
+
+// $(".pres3").click(() => { 
+//     $("#ResSuma").fadeIn();
+// });
+
+function cambiarfondo() {
+    $(this).toggleClass("blue")
+}
+
+
+$("#Pres1").on("mouseover", cambiarfondo);
+$("#Pres1").on("mouseleave", cambiarfondo);
+$("#Pres").on("mouseover", cambiarfondo);
+$("#Pres").on("mouseleave", cambiarfondo);
+$("#Dark").on("mouseover", function(){
+    $(this).css("background-color", "black");
+});
+$("#Dark").on("mouseover", function(){
+    $(this).css("color", "white");
+});
+$("#Dark").on("mouseleave", function(){
+    $(this).css("background-color", "white");
+});
+$("#Dark").on("mouseleave", function(){
+    $(this).css("color", "black");
+});
+
+const theme = () => {
+
+    if (
+        localStorage.getItem("modo") == "oscuro") {
+        aclarar()
+    } else {
+        oscurecer()
+    }
+
+
+
+}
+
+
+const oscurecer = () => {
+    $("body").css("background-color", "black");
+    $("body").css("color", "white");
+    $("header").css("background-color", "gray");
+    $("footer").css("background-color", "gray");
+
+    document.getElementById("Dark").textContent = "Ligth Mode"
+
+    localStorage.setItem("modo", "oscuro")
+}
+
+const aclarar = () => {
+    $("body").css("background-color", "white");
+    $("body").css("color", "black");
+    $("header").css("background-color", "rgb(4, 99, 4)");
+    $("footer").css("background-color", "rgb(4, 99, 4)");
+
+    document.getElementById("Dark").textContent = "Dark Mode"
+
+    localStorage.setItem("modo", "claro")
+}
+
+$("#Dark").click(theme);
+
+if (
+    localStorage.getItem("modo") == "oscuro") {
+    oscurecer()
+} else {
+    aclarar()
+}
+
+
 
 //Arrays
 
 //Funciones
+
+
 
 function calcular() {
 
@@ -65,6 +147,8 @@ function calcular() {
 
 
 function sumar() {
+
+
 
     const gas1 = parseInt(document.querySelector(".gas1").value);
     const gas2 = parseInt(document.querySelector(".gas2").value);
@@ -93,8 +177,11 @@ function imprimirDatos() {
 
             // USANDO JQUERY
 
+
+
             $(".resul").append(`<p> ${element.pre} </p>`);
             $(".Ho").append(`<p> ${element.aho} </p>`);
+
 
             // let p1 = document.createElement("p");
             // p1.textContent = `${element.pre}`;
@@ -117,6 +204,8 @@ function imprimirDatos() {
 
 function imprimirGastos() {
 
+
+
     let imprimir1 = JSON.parse(localStorage.getItem("Gastos"));
 
     if (imprimir1 != null) {
@@ -125,7 +214,8 @@ function imprimirGastos() {
 
             // USANDO JQUERY
 
-            $(".ResSuma").append(`<p> ${element.resul1} </p>`);
+
+            $("#ResSuma").append(`<p> ${element.resul1} </p>`);
 
             // let p2 = document.createElement("p");
             // p2.textContent = `${element.resul1}`;
@@ -146,6 +236,7 @@ function imprimirGastos() {
 
 press.on("click", calcular);
 press1.click(sumar);
+
 
 
 imprimirDatos()

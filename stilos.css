@@ -17,7 +17,8 @@ header{
     grid-area: cabeza;
     background-color:rgb(4, 99, 4);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
        
         
 }
@@ -41,3 +42,10 @@ footer{
     background-color:rgb(4, 99, 4);
     
 }
+
+
+
+.blue{
+    background-color: rgb(85, 85, 250);    
+}
+
