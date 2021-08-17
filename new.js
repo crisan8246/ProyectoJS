@@ -59,16 +59,16 @@ $("#Pres1").on("mouseover", cambiarfondo);
 $("#Pres1").on("mouseleave", cambiarfondo);
 $("#Pres").on("mouseover", cambiarfondo);
 $("#Pres").on("mouseleave", cambiarfondo);
-$("#Dark").on("mouseover", function(){
+$("#Dark").on("mouseover", function () {
     $(this).css("background-color", "black");
 });
-$("#Dark").on("mouseover", function(){
+$("#Dark").on("mouseover", function () {
     $(this).css("color", "white");
 });
-$("#Dark").on("mouseleave", function(){
+$("#Dark").on("mouseleave", function () {
     $(this).css("background-color", "white");
 });
-$("#Dark").on("mouseleave", function(){
+$("#Dark").on("mouseleave", function () {
     $(this).css("color", "black");
 });
 
@@ -139,6 +139,8 @@ function calcular() {
 
     localStorage.setItem("Presupuestos", JSON.stringify(Presupuestos));
 
+  
+
 
 
 
@@ -181,6 +183,12 @@ function imprimirDatos() {
 
             $(".resul").append(`<p> ${element.pre} </p>`);
             $(".Ho").append(`<p> ${element.aho} </p>`);
+            $("table").append(`<tr>
+            <th>${element.gasto}</th>            
+            <th>${element.gasto}</th>
+            <th>${element.aho}</th>          
+            
+            </tr>`)
 
 
             // let p1 = document.createElement("p");
