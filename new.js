@@ -184,7 +184,7 @@ function imprimirDatos() {
             $(".resul").append(`<p> ${element.pre} </p>`);
             $(".Ho").append(`<p> ${element.aho} </p>`);
             $("table").append(`<tr>
-            <th>${element.gasto}</th>            
+            <th>${element.sueldo}</th>            
             <th>${element.gasto}</th>
             <th>${element.aho}</th>          
             
