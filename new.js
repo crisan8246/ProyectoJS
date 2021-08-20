@@ -121,6 +121,36 @@ if (
 
 //Arrays
 
+//AJAX
+
+//Declaramos la url que vamos a usar para el GET
+const URLGET = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
+//Agregamos un botón con jQuery
+$("#Dolar").prepend('<button id="btn1">Presiona para Ahorrar en dolares</button>');
+//Escuchamos el evento click del botón agregado
+$("#btn1").click(() => {
+    $.get(URLGET, function (respuesta, estado) {
+        if (estado === "success") {
+            console.log(respuesta);
+
+            respuesta.forEach(element => {
+
+                $("#Dolar").append(`
+                    <div> 
+                        <p>${element.casa.nombre}</p>
+                        <p>${element.casa.compra}</p>
+                        <p>${element.casa.venta}</p>
+                        
+                    </div>
+                `)                
+
+            });
+        }
+
+    });
+});
+
+
 //Funciones
 
 
@@ -139,7 +169,7 @@ function calcular() {
 
     localStorage.setItem("Presupuestos", JSON.stringify(Presupuestos));
 
-  
+
 
 
 
